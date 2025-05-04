@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <AppHeader />
+</template>
 
 <script setup>
 //

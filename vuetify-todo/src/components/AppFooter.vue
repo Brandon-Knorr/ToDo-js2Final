@@ -1,9 +1,14 @@
-<template>
-  <h1>todo</h1>
-</template>
-
-<script setup>
-const items = [];
+<script>
+export default {
+  name: "AppFooter",
+  return: {},
+  props: {},
+  methods: {},
+};
 </script>
 
-<style scoped lang="sass"></style>
+<template>
+  <v-toolbar title=""></v-toolbar>
+</template>
+
+<style></style>
