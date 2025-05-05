@@ -1,8 +1,4 @@
-<template>
-  <AppHeader />
-
-  <AppFooter />
-</template>
+<template></template>
 
 <script setup>
 //

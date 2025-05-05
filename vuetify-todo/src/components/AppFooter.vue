@@ -15,7 +15,7 @@
     <v-divider></v-divider>
 
     <div>
-      &copy; {{ new Date().getFullYear() }} | <strong>Brandon Knorr</strong>
+      <strong> &copy; {{ new Date().getFullYear() }} | Brandon Knorr</strong>
     </div>
   </v-footer>
 </template>
