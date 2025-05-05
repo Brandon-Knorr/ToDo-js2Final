@@ -22,7 +22,16 @@
     </nav>
 
     <v-navigation-drawer v-model="drawer" app>
-        <p>test</p>
+        <v-list nav>
+
+            <v-list tile>
+
+                <v-list-title>
+                    <span><v-icon start>mdi-view-dashboard</v-icon>Dashboard</span>
+                </v-list-title>
+
+            </v-list>
+        </v-list>
     </v-navigation-drawer>
 
 
@@ -32,7 +41,12 @@
     export default {
         data() {
             return {
-                drawer: false
+                drawer: false,
+                links: [
+                    { icon: '', text: '', route: '' },
+                    { icon: '', text: '', route: '' },
+                    { icon: '', text: '', route: '' },
+                ]
             }
         }
     };
