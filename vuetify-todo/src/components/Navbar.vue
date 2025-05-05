@@ -45,7 +45,8 @@
             return {
                 drawer: false,
                 links: [
-                    { icon: 'mdi-view-dashboard', text: 'Dashboard', route: '/' },
+                    { icon: 'mdi-castle', text: 'Home', route: '/' },
+                    { icon: 'mdi-view-dashboard', text: 'Dashboard', route: '/dashboard' },
                     { icon: 'mdi-script-text-outline', text: 'Quests', route: '/quests' },
                     { icon: 'mdi-trophy', text: 'Rank', route: '/rank' },
                 ]
