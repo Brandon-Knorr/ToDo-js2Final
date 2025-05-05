@@ -5,11 +5,10 @@
  */
 
 // https://vuetifyjs.com/features/sass-variables/`
-@forward 'vuetify/settings' with (
+@use 'vuetify/settings' with (
   $color-pack: false,
+  $layers: true,
   $app-bar-background: #842dad,
   $footer-background: #842dad,
-  
-
 );
 
