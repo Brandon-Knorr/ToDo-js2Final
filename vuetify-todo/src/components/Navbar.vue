@@ -1,15 +1,10 @@
-<script>
-    export default {};
-</script>
-
 <template>
     <nav>
         <v-app-bar :elevation="2">
             <template v-slot:prepend>
-                <v-btn flat>
-                    <v-icon>mdi-dots-vertical</v-icon>
-                </v-btn>
+                <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
             </template>
+
 
             <v-app-bar-title>
                 <span class="font-weight-light">MAIN</span>
@@ -25,4 +20,20 @@
             </v-btn>
         </v-app-bar>
     </nav>
+
+    <v-navigation-drawer v-model="drawer" app>
+        <p>test</p>
+    </v-navigation-drawer>
+
+
 </template>
+
+<script>
+    export default {
+        data() {
+            return {
+                drawer: false
+            }
+        }
+    };
+</script>
