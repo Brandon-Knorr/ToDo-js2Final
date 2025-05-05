@@ -23,12 +23,14 @@
 
     <v-navigation-drawer v-model="drawer" app>
         <v-list nav>
+            <v-list tile v-for="link in links" :key="link.text">
 
-            <v-list tile>
+                <v-list-item-action>
 
-                <v-list-title>
-                    <span><v-icon start>mdi-view-dashboard</v-icon>Dashboard</span>
-                </v-list-title>
+                    <v-btn flat :prepend-icon="link.icon" :to="link.route">
+                        {{ link.text }}
+                    </v-btn>
+                </v-list-item-action>
 
             </v-list>
         </v-list>
@@ -43,9 +45,9 @@
             return {
                 drawer: false,
                 links: [
-                    { icon: '', text: '', route: '' },
-                    { icon: '', text: '', route: '' },
-                    { icon: '', text: '', route: '' },
+                    { icon: 'mdi-view-dashboard', text: 'Dashboard', route: '/' },
+                    { icon: 'mdi-script-text-outline', text: 'Quests', route: '/quests' },
+                    { icon: 'mdi-trophy', text: 'Rank', route: '/rank' },
                 ]
             }
         }
