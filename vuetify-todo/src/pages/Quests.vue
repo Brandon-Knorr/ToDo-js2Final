@@ -1,5 +1,7 @@
 <template>
-  <h1>Quests</h1>
+  <h1 class="text-h5 font-weight-light">Quests</h1>
+
+  <v-container class="my-5"> content </v-container>
 </template>
 
 <script></script>
