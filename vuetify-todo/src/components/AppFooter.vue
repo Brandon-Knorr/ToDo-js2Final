@@ -2,11 +2,12 @@
   <v-footer class="text-center d-flex flex-column ga-2 py-4" app="true">
     <div class="d-flex ga-3">
       <v-btn
-        v-for="icon in icons"
-        :key="icon"
-        :icon="icon"
+        v-for="link in links"
+        :key="link.icon"
+        :icon="link.icon"
         density="comfortable"
         variant="text"
+        :href="link.href"
       ></v-btn>
     </div>
 
@@ -22,9 +23,17 @@
 
 <script>
 export default {
-  data: () => ({
-    icons: ["mdi-linkedin", "mdi-github"],
-  }),
+  data() {
+    return {
+      links: [
+        {
+          icon: "mdi-linkedin",
+          href: "https://www.linkedin.com/in/brandon-knorr93",
+        },
+        { icon: "mdi-github", href: "https://github.com/Brandon-Knorr" },
+      ],
+    };
+  },
 };
 </script>
 
