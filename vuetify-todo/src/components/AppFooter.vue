@@ -5,6 +5,7 @@
         v-for="link in links"
         :key="link.icon"
         :icon="link.icon"
+        elevation="2"
         density="comfortable"
         variant="text"
         :href="link.href"

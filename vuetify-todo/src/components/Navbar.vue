@@ -2,9 +2,8 @@
     <nav>
         <v-app-bar :elevation="2">
             <template v-slot:prepend>
-                <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+                <v-app-bar-nav-icon elevation="3" @click="drawer = !drawer"></v-app-bar-nav-icon>
             </template>
-
 
             <v-app-bar-title>
                 <span class="font-weight-light">MAIN</span>
@@ -12,31 +11,23 @@
                 <v-icon>mdi-feather</v-icon>
             </v-app-bar-title>
 
-            <v-btn flat>
-                <span>Sign Out</span>
-                <template v-slot:append>
-                    <v-icon>mdi-logout</v-icon>
-                </template>
+            <v-btn elevation="3" append-icon="mdi-logout">
+                Sign Out
             </v-btn>
         </v-app-bar>
     </nav>
 
     <v-navigation-drawer v-model="drawer" app>
-        <v-list nav>
-            <v-list tile v-for="link in links" :key="link.text">
-
+        <v-list nav bg-color="#bd86ea">
+            <v-list bg-color="#bd86ea" tile v-for="link in links" :key="link.text">
                 <v-list-item-action>
-
-                    <v-btn flat :prepend-icon="link.icon" :to="link.route">
+                    <v-btn active-color="#73954b" color="#afc893" block flat :prepend-icon="link.icon" :to="link.route">
                         {{ link.text }}
                     </v-btn>
                 </v-list-item-action>
-
             </v-list>
         </v-list>
     </v-navigation-drawer>
-
-
 </template>
 
 <script>
@@ -45,12 +36,12 @@
             return {
                 drawer: false,
                 links: [
-                    { icon: 'mdi-castle', text: 'Home', route: '/' },
-                    { icon: 'mdi-shield-account', text: 'Profile', route: '/profile' },
-                    { icon: 'mdi-script-text-outline', text: 'Quests', route: '/quests' },
-                    { icon: 'mdi-trophy', text: 'Rank', route: '/rank' },
-                ]
-            }
-        }
+                    { icon: "mdi-castle", text: "Home", route: "/" },
+                    { icon: "mdi-shield-account", text: "Profile", route: "/profile" },
+                    { icon: "mdi-script-text-outline", text: "Quests", route: "/quests" },
+                    { icon: "mdi-trophy", text: "Rank", route: "/rank" },
+                ],
+            };
+        },
     };
 </script>
