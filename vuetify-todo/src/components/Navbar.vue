@@ -21,7 +21,7 @@
         <v-list nav bg-color="#bd86ea">
             <v-list bg-color="#bd86ea" tile v-for="link in links" :key="link.text">
                 <v-list-item-action>
-                    <v-btn active-color="#73954b" color="#afc893" block flat :prepend-icon="link.icon" :to="link.route">
+                    <v-btn active-color="#73954b" color="#afc893" block :prepend-icon="link.icon" :to="link.route">
                         {{ link.text }}
                     </v-btn>
                 </v-list-item-action>
