@@ -3,6 +3,8 @@
         <h1 class="text-h5 font-weight-light">Home</h1>
 
         <v-container class="my-5">
+
+
             <v-card v-ripple tile density="compact" color="#ecdcf9" hover ripple class="pa-3 pb-0"
                 v-for="quest in quests" :key="quest.title">
                 <v-row class="d-flex flex-wrap justify-space-around" :class="`pa-3 quest ${ quest.status }`">
@@ -17,16 +19,16 @@
                     </v-col>
 
                     <v-col class="d-flex flex-column" cols="">
-                        <div class="text-center">
+                        <v-text class="text-center text-caption">Difficulty:</v-text>
+                        <v-text class="text-center">{{ quest.difficulty }}</v-text>
+                    </v-col>
+
+                    <v-col class="d-flex flex-column" cols="">
+                        <div class="text-end">
                             <v-chip size="small" :class="`${ quest.status } my-2`">
                                 <v-text class="text-caption">{{ quest.status }}</v-text>
                             </v-chip>
                         </div>
-                    </v-col>
-
-                    <v-col class="d-flex flex-column" cols="">
-                        <v-text class="text-end text-caption">Difficulty:</v-text>
-                        <v-text class="text-end">{{ quest.difficulty }}</v-text>
                     </v-col>
                 </v-row>
                 <v-divider></v-divider>

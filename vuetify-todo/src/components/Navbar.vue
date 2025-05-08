@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <v-app-bar :elevation="2">
+        <v-app-bar tile :elevation="2">
             <template v-slot:prepend>
                 <v-app-bar-nav-icon elevation="3" @click="drawer = !drawer"></v-app-bar-nav-icon>
             </template>
@@ -11,9 +11,7 @@
                 <v-icon>mdi-feather</v-icon>
             </v-app-bar-title>
 
-            <v-btn elevation="3" append-icon="mdi-logout">
-                Sign Out
-            </v-btn>
+            <v-btn elevation="3" append-icon="mdi-logout"> Sign Out </v-btn>
         </v-app-bar>
     </nav>
 

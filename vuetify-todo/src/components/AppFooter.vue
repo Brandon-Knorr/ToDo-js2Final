@@ -1,5 +1,9 @@
 <template>
-  <v-footer class="text-center d-flex flex-column ga-2 py-4" app="true">
+  <v-footer
+    scroll-behavior="hide"
+    class="text-center d-flex flex-column ga-2 py-4"
+    app="true"
+  >
     <div class="d-flex ga-3">
       <v-btn
         v-for="link in links"
@@ -17,7 +21,10 @@
     <v-divider></v-divider>
 
     <div>
-      <strong> &copy; {{ new Date().getFullYear() }} | Brandon Knorr</strong>
+      <v-text class="text-body-1">
+        JavaScript 2 | &copy; {{ new Date().getFullYear() }} | Brandon
+        Knorr</v-text
+      >
     </div>
   </v-footer>
 </template>
