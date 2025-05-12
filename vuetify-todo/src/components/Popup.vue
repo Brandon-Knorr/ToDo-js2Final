@@ -1,10 +1,10 @@
 <template>
     <v-container>
         <v-row class="text-center">
-            <v-col cols="12" md="6">
+            <v-col>
                 <v-dialog max-width="340">
-                    <template v-slot:activator="{ props: activatorProps }">
-                        <v-btn v-bind="activatorProps" prepend-icon="mdi-sword-cross" width="204">
+                    <template v-slot:activator="{ props: activatorProps }" class="text-center">
+                        <v-btn v-bind="activatorProps" prepend-icon="mdi-sword-cross">
                             Add New Quest
                         </v-btn>
                     </template>
