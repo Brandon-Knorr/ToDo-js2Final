@@ -13,9 +13,17 @@
                         <v-card prepend-icon="mdi-sword-cross" title="Embark on a new Quest">
 
                             <v-card-text>
-                                <v-form class="px-3">
-                                    <v-text-field label="Title" v-model="title"></v-text-field>
-                                    <v-textarea label="Information" v-model="content"></v-textarea>
+                                <v-form class="px-3" ref="questForm">
+
+                                    <v-text-field variant="outlined" label="Title" v-model="title"
+                                        :rules="inputRules"></v-text-field>
+
+                                    <v-textarea variant="outlined" label="Information" v-model="content"
+                                        :rules="inputRules"></v-textarea>
+
+                                    <v-date-input clearable label="Date input" :rules="inputRules" variant="outlined"
+                                        v-model="due"></v-date-input>
+
                                     <v-btn flat class="success mx-0 mt-3" @click="submit">Add Quest</v-btn>
                                 </v-form>
                             </v-card-text>
@@ -37,11 +45,17 @@
             return {
                 title: '',
                 content: '',
+                due: '',
+                inputRules: [
+                    v => v.length >= 3 || 'Must have at least 3 characters'
+                ],
             }
         },
         methods: {
             submit() {
-                console.log(this.title, this.content)
+                if (this.$refs.questForm.validate()) {
+                    console.log(this.title, this.content, this.due)
+                }
             }
         },
     };
