@@ -6,16 +6,16 @@
 
             <v-row class="mb-2">
                 <v-col>
-                    <v-btn color="#d0a8f0" size="small" variant="flat" prepend-icon="mdi-filter-variant"
-                        @click="sortBy('title')">
+                    <v-btn v-tooltip:top="'Sort quests by title'" color="#d0a8f0" size="small" variant="flat"
+                        prepend-icon="mdi-filter-variant" @click="sortBy('title')">
                         <v-text class="text-caption font-weight-light">by quest title</v-text>
                     </v-btn>
-                    <v-btn color="#d0a8f0" size="small" variant="flat" prepend-icon="mdi-timer-sand-complete"
-                        @click="sortBy('status')">
+                    <v-btn v-tooltip:top="'Sort quests by status'" color="#d0a8f0" size="small" variant="flat"
+                        prepend-icon="mdi-timer-sand-complete" @click="sortBy('status')">
                         <v-text class="text-caption font-weight-light">by status</v-text>
                     </v-btn>
-                    <v-btn color="#d0a8f0" size="small" variant="flat" prepend-icon="mdi-calendar-alert"
-                        @click="sortBy('due')">
+                    <v-btn v-tooltip:top="'Sort quests by due date'" color="#d0a8f0" size="small" variant="flat"
+                        prepend-icon="mdi-calendar-alert" @click="sortBy('due')">
                         <v-text class="text-caption font-weight-light">by due date</v-text>
                     </v-btn>
                 </v-col>
