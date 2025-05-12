@@ -16,12 +16,19 @@
     </nav>
 
     <v-navigation-drawer v-model="drawer" app>
-        <v-col class="d-flex align-center mt-10">
-            <v-avatar size="100">
+        <v-row>
+            <v-col class="d-flex align-center mt-10">
+                <v-avatar size="100">
 
-            </v-avatar>
-            <p class="text-subtitle mt-3">Big Key</p>
-        </v-col>
+                </v-avatar>
+                <p class="text-subtitle mt-3">Big Key</p>
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col>
+                <popup></popup>
+            </v-col>
+        </v-row>
         <v-list nav bg-color="#bd86ea">
             <v-list bg-color="#bd86ea" tile v-for="link in links" :key="link.text">
                 <v-list-item-action>
@@ -35,7 +42,9 @@
 </template>
 
 <script>
+    import Popup from './Popup.vue'
     export default {
+        components: { Popup },
         data() {
             return {
                 drawer: false,
