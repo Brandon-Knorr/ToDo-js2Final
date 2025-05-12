@@ -1,8 +1,9 @@
-import firebase from "firebase";
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import "firebase/firestore";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// web apps firebase config
+// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDJaxm_Mvl2EwTwaPGGCsLq44XVbIbMH7U",
   authDomain: "todorpg-vuetify.firebaseapp.com",
@@ -12,5 +13,7 @@ const firebaseConfig = {
   appId: "1:234145916312:web:614e43f7a19f712fc277ed",
 };
 
-//initialize Firebase
-export const app = firebase.initializeApp(firebaseConfig).firestore();
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+export default app;

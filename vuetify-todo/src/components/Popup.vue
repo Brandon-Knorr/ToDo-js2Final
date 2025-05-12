@@ -40,6 +40,7 @@
 </template>
 
 <script>
+    import db from '../firebase/db.js'
     export default {
         data() {
             return {
@@ -54,7 +55,16 @@
         methods: {
             submit() {
                 if (this.$refs.questForm.validate()) {
-                    console.log(this.title, this.content, this.due)
+                    const quest = {
+                        title: this.title,
+                        content: this.content,
+                        due: this.due,
+                        status: this.status,
+                    }
+
+                    db.collection('quests').add(quest).then(() => {
+                        console.log('added to db')
+                    })
                 }
             }
         },
