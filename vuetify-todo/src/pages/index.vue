@@ -4,6 +4,22 @@
 
         <v-container class="my-5">
 
+            <v-row class="mb-2">
+                <v-col>
+                    <v-btn color="#d0a8f0" size="small" variant="flat" prepend-icon="mdi-filter-variant"
+                        @click="sortBy('title')">
+                        <v-text class="text-caption font-weight-light">by quest title</v-text>
+                    </v-btn>
+                    <v-btn color="#d0a8f0" size="small" variant="flat" prepend-icon="mdi-timer-sand-complete"
+                        @click="sortBy('status')">
+                        <v-text class="text-caption font-weight-light">by status</v-text>
+                    </v-btn>
+                    <v-btn color="#d0a8f0" size="small" variant="flat" prepend-icon="mdi-calendar-alert"
+                        @click="sortBy('due')">
+                        <v-text class="text-caption font-weight-light">by due date</v-text>
+                    </v-btn>
+                </v-col>
+            </v-row>
 
             <v-card v-ripple tile density="compact" color="#ecdcf9" hover ripple class="pa-3 pb-0"
                 v-for="quest in quests" :key="quest.title">
@@ -31,7 +47,9 @@
                         </div>
                     </v-col>
                 </v-row>
+
                 <v-divider></v-divider>
+
             </v-card>
         </v-container>
     </div>
@@ -48,6 +66,11 @@
                     { title: 'Feed Cat', due: 'N/A', status: 'Ongoing', difficulty: 'Easy' },
                     { title: 'Study Code', due: '05/05/25', status: 'Overdue', difficulty: 'Hard' },
                 ]
+            }
+        },
+        methods: {
+            sortBy(prop) {
+                this.quests.sort((a, b) => a[prop] < b[prop] ? -1 : 1)
             }
         },
     };
