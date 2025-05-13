@@ -4,6 +4,12 @@
 
     <v-container class="my-5">
 
+      <v-row>
+        <v-col class="text-center">
+          <popup></popup>
+        </v-col>
+      </v-row>
+
       <v-row class="mb-2">
         <v-col>
           <v-btn v-tooltip:top="'Sort quests by title'" color="#d0a8f0" size="small" variant="flat"
@@ -56,7 +62,9 @@
 </template>
 
 <script>
+import Popup from "@/components/Popup.vue";
   export default {
+    components: { Popup },
     data() {
       return {
         quests: [
