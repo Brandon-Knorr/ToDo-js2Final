@@ -49,7 +49,7 @@
             return {
                 drawer: false,
                 links: [
-                    { icon: "mdi-castle", text: "Home", route: "/" },
+                    { icon: "mdi-castle", text: "Home", route: "/home" },
                     { icon: "mdi-shield-account", text: "Profile", route: "/profile" },
                     { icon: "mdi-script-text-outline", text: "Quests", route: "/quests" },
                     { icon: "mdi-trophy", text: "Rank", route: "/rank" },
