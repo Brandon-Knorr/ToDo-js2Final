@@ -1,22 +1,22 @@
 export default class Task {
   constructor({
-                id = null,
-                title = '',
-                status = '',
-                difficulty = '',
-                due = null,
-                done = false,
-                subtasks = []
-              } = {}) {
+    id = null,
+    title = "",
+    status = "",
+    difficulty = "",
+    due = null,
+    done = false,
+    subtasks = [],
+  } = {}) {
     this.id = id;
     this.title = title;
     this.status = status;
     this.difficulty = difficulty;
     this.due = due;
     this.done = done;
-    this.subtasks = subtasks.map(sub => ({
-      content: sub.content || '',
-      done: sub.done || false
+    this.subtasks = subtasks.map((sub) => ({
+      content: sub.content || "",
+      done: sub.done || false,
     }));
   }
 
@@ -27,7 +27,7 @@ export default class Task {
       difficulty: this.difficulty,
       due: this.due,
       done: this.done,
-      subtasks: this.subtasks
+      subtasks: this.subtasks,
     };
   }
 

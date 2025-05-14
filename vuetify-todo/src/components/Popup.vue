@@ -1,53 +1,51 @@
 <script>
 export default {
-  name: 'Popup',
+  name: "Popup",
   data() {
     return {
-      title: '',
-      status: '',  // No longer set manually
-      difficulty: '',
-      due: '',
-      inputRules: [
-        v => v.length >= 3 || 'Must have at least 3 characters'
-      ]
+      title: "",
+      status: "", // No longer set manually
+      difficulty: "",
+      due: "",
+      inputRules: [(v) => v.length >= 3 || "Must have at least 3 characters"],
     };
   },
   methods: {
     submit() {
       if (this.$refs.questForm.validate()) {
-        // Automatically determine status based on current date and due date
         const currentDate = new Date();
         const dueDate = new Date(this.due);
 
-        let taskStatus = '';
+        let taskStatus = "";
         if (currentDate < dueDate) {
-          taskStatus = 'Ongoing';
+          taskStatus = "Ongoing";
         } else if (currentDate > dueDate) {
-          taskStatus = 'Overdue';
+          taskStatus = "Overdue";
         } else {
-          taskStatus = 'Complete';  // You could also keep this as a fallback if done.
+          taskStatus = "Complete";
         }
 
         const newTask = {
           title: this.title,
-          status: taskStatus,  // Set dynamically
+          status: taskStatus,
           difficulty: this.difficulty,
           due: this.due,
           done: false,
-          subtasks: []
+          subtasks: [],
         };
 
-        this.$emit('add-task', newTask);  // Emit task to parent
+        console.log("Emitting add-task event with data:", newTask); // Debug log
+        this.$emit("add-task", newTask); // Emit task to parent
         this.clearForm();
       }
     },
     clearForm() {
-      this.title = '';
-      this.status = '';  // No need to reset status
-      this.difficulty = '';
-      this.due = '';
-    }
-  }
+      this.title = "";
+      this.status = ""; // No need to reset status
+      this.difficulty = "";
+      this.due = "";
+    },
+  },
 };
 </script>
 
@@ -86,12 +84,18 @@ export default {
                     v-model="due"
                   />
 
-                  <v-btn class="success mt-3" flat @click="submit">Add Quest</v-btn>
+                  <v-btn class="success mt-3" flat @click="submit"
+                    >Add Quest</v-btn
+                  >
                 </v-form>
               </v-card-text>
 
               <template v-slot:actions>
-                <v-btn class="ml-auto" text="Close" @click="isActive.value = false"></v-btn>
+                <v-btn
+                  class="ml-auto"
+                  text="Close"
+                  @click="isActive.value = false"
+                ></v-btn>
               </template>
             </v-card>
           </template>
