@@ -2,7 +2,7 @@
 import Navbar from '../components/Navbar.vue';
 import { db } from '../firebase/firebase.js';
 import { collection, addDoc } from 'firebase/firestore';
-import {User} from "@/models/User.js";
+import User from "@/models/User.js";
 export default {
   name: 'UserList',
   data() {
