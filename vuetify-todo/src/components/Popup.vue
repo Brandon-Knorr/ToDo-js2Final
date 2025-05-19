@@ -8,9 +8,9 @@
       return {
         id: '',
         title: '',
-        status: '', // No longer set manually
         difficulty: '',
         due: '',
+        popupVisible: false,
         Task: { type: Object, default: () => ({}) },
         inputRules: [v => v.length >= 3 || 'Must have at least 3 characters'],
       };
@@ -45,16 +45,13 @@
           }
 
           this.clearForm();
-          this.closeModal();
+          this.popupVisible = false;
         }
       },
       clearForm () {
         this.title = '';
         this.difficulty = '';
         this.due = '';
-      },
-      closeModal () {
-        this.isActive.value = false;
       },
     },
   };
@@ -64,7 +61,7 @@
   <v-container>
     <v-row class="text-center">
       <v-col>
-        <v-dialog max-width="400">
+        <v-dialog v-model="popupVisible" max-width="400">
           <template #activator="{ props: activatorProps }">
             <v-btn v-bind="activatorProps" prepend-icon="mdi-sword-cross">
               Add New Quest
