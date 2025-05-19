@@ -1,18 +1,10 @@
-export default class User {
-  constructor(id = null, data = {}) {
-    this.id = id;
-    this.firstName = data.firstName || '';
-    this.lastName = data.lastName || '';
-  }
+export default function User (id, data) {
+  id = id ?? '';
+  data = data ?? {};
 
-  get fullName() {
-    return `${this.firstName} ${this.lastName}`;
-  }
-
-  toFirestore() {
-    return {
-      firstName: this.firstName,
-      lastName: this.lastName
-    };
+  return {
+    id,
+    firstName: data.firstName ?? '',
+    lastName: data.lastName ?? '',
   }
 }
