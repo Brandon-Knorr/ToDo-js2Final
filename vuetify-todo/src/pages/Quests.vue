@@ -1,11 +1,9 @@
 <script>
-  import Navbar from '@/components/Navbar.vue';
   import Popup from '@/components/Popup.vue';
   import TaskList from '@/components/TaskList.vue';
-  import TaskCollection from '@/models/TaskCollection';
-  import Task from '@/models/Task';
+  import Task from '@/models/Task.js';
   export default {
-    components: { Navbar, Popup, TaskList },
+    components: { Popup, TaskList },
     data () {
       return {
         tasks: [],
@@ -16,7 +14,6 @@
 
 <template>
   <div class="quests">
-    <Navbar />
     <h1 class="text-h5 font-weight-light">Quests</h1>
 
     <v-row class="my-3">

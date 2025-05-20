@@ -2,6 +2,7 @@ export default function Task (id, data) {
   id = id ?? '';
   data = data ?? {};
 
+
   return {
     id,
     title: data.title ?? '',

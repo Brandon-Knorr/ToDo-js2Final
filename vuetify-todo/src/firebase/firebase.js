@@ -1,5 +1,8 @@
 import { initializeApp } from 'firebase/app';
 import { collection, getFirestore } from 'firebase/firestore'
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import Task from '@/models/Task';
+import User from '@/models/User';
 
 
 // Your web app's Firebase configuration
@@ -13,13 +16,16 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-
-const db = getFirestore(app);
+let app, db, auth, authProvider;
+try {
+  app = initializeApp(firebaseConfig);
+  db = getFirestore(app);
+  auth = getAuth(app);
+  authProvider = new GoogleAuthProvider();
+}catch(error){
+  // do as set timeout because Quasar's Notify is not registered yet.
+  console.log(error);
+}
 const taskCollection = collection(db, 'Tasks');
 
-export { db, app, taskCollection };
-
-import Task from '@/models/Task';
-import User from '@/models/User';
+export { db, app, taskCollection, auth, authProvider };

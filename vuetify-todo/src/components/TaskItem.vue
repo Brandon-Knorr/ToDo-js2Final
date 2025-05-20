@@ -19,6 +19,7 @@
             console.log('Error removing document: ', error);
           });
       },
+
     },
   }
 </script>

@@ -23,7 +23,8 @@
                    querySnapshot => {
                      this.tasks = [];
                      querySnapshot.forEach(doc => {
-                       this.tasks.push(new Task(doc.id, doc.data()))
+                       if (doc.data().status !== 'Complete')
+                         this.tasks.push(new Task(doc.id, doc.data()))
                      });
                    });
       },

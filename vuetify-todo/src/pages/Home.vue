@@ -1,5 +1,4 @@
 <script>
-  import Navbar from '@/components/Navbar.vue';
   import { collection, onSnapshot } from 'firebase/firestore';
   import { db } from '@/firebase/firebase.js';
   import Task from '@/models/Task.js';
@@ -21,7 +20,8 @@
                    querySnapshot => {
                      this.tasks = [];
                      querySnapshot.forEach(doc => {
-                       this.tasks.push(new Task(doc.id, doc.data()))
+                       if (doc.data().status !== 'Complete')
+                         this.tasks.push(new Task(doc.id, doc.data()))
                      });
                    });
       },
@@ -31,7 +31,6 @@
 
 
 <template>
-  <Navbar />
   <h1 class="text-h5 font-weight-light">Home</h1>
 
   <v-container class="my-5">
@@ -40,7 +39,8 @@
         <v-expansion-panel-title disable-icon-rotate>
           {{ task.title }}
           <template #actions>
-            <v-icon v-if="task.status == 'Overdue'" color="#f64740" icon="mdi-alert-circle" />
+            <v-icon v-if="task.status == 'Overdue'" color="#f64740" icon="mdi-clock-alert" />
+            <v-icon v-if="task.status == 'Ongoing'" color="#f4b067" icon="mdi-shield-alert" />
           </template>
         </v-expansion-panel-title>
         <v-expansion-panel-text>
